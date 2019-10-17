@@ -1,29 +1,56 @@
+<div>
 
-
-<nav mat-tab-nav-bar class="d-none d-sm-flex">
-  <a mat-tab-link
-     *ngFor="let e of examples"
-     [routerLink]="e.link"
-     routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive">
-    {{e.label}}
-  </a>
-</nav>
-
-<nav class="nav-responsive d-sm-none d-flex justify-content-center">
-    <mat-select placeholder="Liste de lecture" value="Liste de lecture">
-      <mat-option *ngFor="let e of examples"
-      
-      [value]="e"
-        [routerLink]="e.link">
+    <nav mat-tab-nav-bar class="d-none d-sm-flex">
+      <!--
+         <a mat-tab-link
+           *ngFor="let e of examplesAdmin"
+           [routerLink]="e.link"
+           routerLinkActive #rla="routerLinkActive"
+           [active]="rla.isActive">
           {{e.label}}
-      </mat-option>
-    </mat-select>
-</nav>
+        </a>
+      -->
+
+        <a mat-tab-link
+           *ngFor="let e of examplesNonAdmin"
+           [routerLink]="e.link"
+           routerLinkActive #rla="routerLinkActive"
+           [active]="rla.isActive">
+          {{e.label}}
+        </a>
+      </nav>
+
+      <nav class="nav-responsive d-sm-none d-flex justify-content-center">
+          <mat-select placeholder="Navigation de l'application" >
+             <!--
+            <mat-option *ngFor="let e of examplesAdmin"
+              color="accent"
+              [value]="e"
+              [routerLink]="e.link">
+                {{e.label}}
+            </mat-option>
+            -->
+            <mat-option *ngFor="let e of examplesNonAdmin"
+              color="primary"
+              [value]="e"
+              [routerLink]="e.link">
+                {{e.label}}
+            </mat-option>
+          </mat-select>
+      </nav>
+
+      <h3 *ngIf="authName$ | async" [ngStyle]="{'text-align':'center'}" >Compte du couriel : {{authName$ | async}}</h3>
+      <div class="flexDiv">
+          <button class="addLogo" mat-raised-button (click)="openBottomSheet()">Ajout d'une proposition</button>
+      </div>
+
+                  <router-outlet #o="outlet"></router-outlet>
 
 
-<div [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
-  <router-outlet #o="outlet"></router-outlet>
+
+
+
+
 </div>
 
 <!--

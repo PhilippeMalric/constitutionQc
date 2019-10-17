@@ -60,3 +60,27 @@
   @include angular-material-theme($anms-nature-theme);
   @include custom-components-theme($anms-nature-theme);
 }
+
+
+.mat-select-value-text{
+  display: inline-block ;
+}
+
+.mat-select-value{
+  display: inline-block ;
+}
+
+.mat-select-placeholder{
+  display: inline-block ;
+}
+
+.mat-select-trigger{
+  text-align: center ;
+  font-size: 125%
+}
+
+.mat-select-placeholder{
+  display: inline-block ;
+}
+
+

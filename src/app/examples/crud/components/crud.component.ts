@@ -32,7 +32,6 @@ import { Node } from '@app/examples/d3';
 import { JeuState } from '@app/examples/authenticated/jeu.model';
 import { Vote, VoteState } from '../vote.model';
 import { ActionVoteUpsertAll, ActionVoteUpsertOne } from '../vote.actions';
-import { selectAllVote } from '../vote.selectors';
 
 @Component({
   selector: 'anms-crud',
@@ -299,7 +298,7 @@ export class CrudComponent {
   delete(logo: Logo) {
     this.store.dispatch(new ActionLogosDeleteOne({ id: logo.id }));
     this.isEditing = false;
-    this.router.navigate(['app/crud']);
+    this.ref.markForCheck()
   }
 
   save() {

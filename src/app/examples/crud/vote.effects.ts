@@ -13,7 +13,7 @@ import { of } from 'rxjs';
 import { ActionLogosUpsertOne, ActionLogosUpsertAll, ActionLogosUpsertOneLocal, ActionLogosUpsertAllFromVote } from './logos.actions';
 import { Logo } from './logos.model';
 
-export const vote_key = "JCgYwx6po073nmXCtbRn"
+export const vote_key = "QfL3x0eB42Uz7jEYp68q"
 export const TODOS_KEY = 'EXAMPLES.TODOS';
 
 @Injectable()

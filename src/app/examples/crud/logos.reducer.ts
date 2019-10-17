@@ -8,7 +8,7 @@ import { select } from '@ngrx/store';
 import { selectAuth } from '@app/core/auth/auth.selectors';
 
 export function sortByTitle(a: Logo, b: Logo): number {
-  return a.id.localeCompare(b.id);
+  return a.texte.localeCompare(b.texte);
 }
 
 export const logoAdapter: EntityAdapter<Logo> = createEntityAdapter<Logo>({

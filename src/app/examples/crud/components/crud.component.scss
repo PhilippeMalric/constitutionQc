@@ -3,8 +3,14 @@ h1 {
   text-transform: uppercase;
 }
 
+.flexDiv{
+  display:flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
 mat-card {
-  margin: 0 0 10px 0;
+  margin: auto;
   cursor: pointer;
 }
 
@@ -68,4 +74,8 @@ mat-card {
 
 .flex {
   display: flex;
+}
+
+.text-align-c{
+  text-align: center
 }

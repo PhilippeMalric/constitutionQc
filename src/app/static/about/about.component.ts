@@ -38,4 +38,9 @@ export class AboutComponent implements OnInit {
   click(){
   }
 
+  goToLink(){
+    window.open("https://www.accq.quebec/", "_blank");
+}
+
+
 }

@@ -10,7 +10,16 @@
           routerLinkActive="active">
           {{item.label}}
         </a>
+        <hr>
+        <mat-nav-list>
+            <a mat-list-item *ngFor="let item of navigationSideMenu2" (click)="sidenav.close()" [routerLink]="[item.link]"
+              routerLinkActive="active">
+              {{item.label}}
+            </a>
+          </mat-nav-list>
       </mat-nav-list>
+
+
     </mat-sidenav>
 
     <div class="wrapper">
@@ -30,6 +39,7 @@
               routerLinkActive="active">
               {{item.label}}
             </button>
+
           </span>
 
           <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()" class="googleImg">
@@ -74,36 +84,16 @@
               </mat-option>
             </mat-select>
           </span>
+
         </mat-toolbar>
       </div>
       <div class="content" [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
 
 
-          <nav mat-tab-nav-bar class="d-none d-sm-flex">
-              <a mat-tab-link
-                 *ngFor="let e of navItem"
-                 [routerLink]="e.link"
-                 routerLinkActive #rla="routerLinkActive"
-                 [active]="rla.isActive">
-                {{e.label}}
-              </a>
-            </nav>
-
-            <nav class="nav-responsive d-sm-none d-flex justify-content-center">
-                <mat-select placeholder="Liste de lecture" value="Liste de lecture">
-                  <mat-option *ngFor="let e of navItem"
-
-                  [value]="e"
-                    [routerLink]="e.link">
-                      {{e.label}}
-                  </mat-option>
-                </mat-select>
-            </nav>
+          <router-outlet #o="outlet"></router-outlet>
 
 
-        <router-outlet #o="outlet"></router-outlet>
       </div>
-
       <div class="footer">
         <div class="row">
           <div class="col-sm-12 links">
@@ -160,3 +150,7 @@
   </mat-sidenav-container>
 
 </div>
+
+
+
+

@@ -1,0 +1,27 @@
+
+
+
+<nav mat-tab-nav-bar class="d-none d-sm-flex">
+    <a mat-tab-link
+        *ngFor="let e of navItem"
+        [routerLink]="e.link"
+        routerLinkActive #rla="routerLinkActive"
+        [active]="rla.isActive">
+      {{e.label}}
+    </a>
+  </nav>
+
+  <nav class="nav-responsive d-sm-none d-flex justify-content-center">
+      <mat-select #mySelect placeholder="Navigation principale" >
+        <mat-option *ngFor="let e of navItem" class="navItem"
+
+        [value]="e"
+          [routerLink]="e.link">
+            {{e.label}}
+        </mat-option>
+      </mat-select>
+  </nav>
+
+      <router-outlet #o="outlet"></router-outlet>
+
+

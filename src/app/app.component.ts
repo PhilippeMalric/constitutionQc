@@ -30,10 +30,10 @@ import {
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
+
+  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
   //@ViewChild('audioOption') audioPlayerRef: ElementRef;
-  navItem = [ { link: 'about', label: 'Maison', auth: false },
-              { link: 'test', label: 'Test', auth: false }
-    ]
+
   isProd = env.production;
   envName = env.envName;
   version = env.versions.app;
@@ -41,17 +41,17 @@ export class AppComponent implements OnInit {
   logo = require('../assets/logo.png');
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
   navigation = [
-    { link: 'about', label: 'À propos' },
+    { link: 'noid/maison', label: 'Maison' },
     { link: 'app', label: 'Application' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: 'settings', label: 'anms.menu.settings' }
+    { link: 'noid/settings', label: 'anms.menu.settings' }
   ];
   navigationSideMenu2 = [
-    { link: 'emailLogin', label: 'Authentification' },
-    { link: 'emailSignUp', label: 'Enregistrement' },
-    { link: 'forget', label: 'Oublie du mot de pass' }
+    { link: 'noid/emailLogin', label: 'Authentification' },
+    { link: 'noid/emailSignUp', label: 'Enregistrement' },
+    { link: 'noid/forget', label: 'Oublie du mot de pass' }
   ];
 
   isAuthenticated$: Observable<boolean>;

@@ -5,7 +5,7 @@
     <mat-card-title> {{ card.name }} </mat-card-title>
     <mat-card-content> {{ card.texte }} </mat-card-content>
     <mat-card-footer class="center">
-      <button fxFlex mat-flat-button color="primary" >Chat</button>
+     <!--<button fxFlex mat-flat-button color="primary" >Chat</button>-->
     </mat-card-footer>
   </mat-card>
   </div>
@@ -15,6 +15,10 @@
   <mat-card class="offline marginated" >
     <img mat-card-image [src]="card.url_img" />
     <mat-card-title> {{ card.name }} </mat-card-title>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="delete(card.id)" *ngIf="(authEmail$|async) == 'malric.philippe@gmail.com'">Supprimer</button>
+
+    </mat-card-actions>
   </mat-card>
   </div>
 </div>

@@ -7,7 +7,6 @@ import {
   AngularFirestoreCollection
 } from 'angularfire2/firestore';
 import { tap, map } from 'rxjs/operators';
-import { selectJeuxState } from './vote.selectors';
 import { Vote } from './vote.model';
 import { vote_key } from './vote.effects';
 

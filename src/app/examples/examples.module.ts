@@ -10,7 +10,7 @@ import { environment } from '@env/environment';
 
 import { FEATURE_NAME, reducers } from './examples.state';
 import { ExamplesRoutingModule } from './examples-routing.module';
-import { ExamplesComponent } from './examples/examples.component';
+import { ExamplesComponent, BottomSheetComponent } from './examples/examples.component';
 
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { CrudComponent } from './crud/components/crud.component';
@@ -43,8 +43,12 @@ import { QuestionControlService } from './questionnaire/question-service';
 import { QuestionService } from './questionnaire/questions-service2';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { QuestionnaireEffects } from './questionnaire/questionnaire.effects';
+
 @NgModule({
   imports: [
+    MatBottomSheetModule,
     ReactiveFormsModule,
     SharedModule,
     ExamplesRoutingModule,
@@ -62,11 +66,12 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
       JeuxEffects,
       LogosEffects,
       VotesEffects,
-      UsersEffects
+      UsersEffects,
+      QuestionnaireEffects
     ])
   ],
   declarations: [
-
+    BottomSheetComponent,
     DynamicFormQuestionComponent,
     VariableComponent,
     FbComponent,
@@ -82,6 +87,7 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
     DynamicFormComponent,
     QuestionnaireComponent
   ],
+  entryComponents: [BottomSheetComponent],
   providers: [JeuServiceService,VariableService,FbService,QuestionControlService,QuestionService],
   exports: [PixabayComponent, DynamicFormComponent, QuestionnaireComponent]
 })

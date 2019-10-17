@@ -1,5 +1,19 @@
 @import '../../../styles-variables';
 
+
+.center{margin: auto}
+
+
+.addLogo{
+    margin:auto
+}
+
+.flexDiv{
+
+  display: flex;
+  //justify-content: flex-end;
+}
+
 nav {
   margin-bottom: 20px;
 

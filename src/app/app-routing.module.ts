@@ -10,61 +10,84 @@ import { AuthGuardService } from './core';
 import { AboutComponent } from './static';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
 import { FeaturesComponent } from './static/features/features.component';
+import { StatutReglementComponent } from './static/statut-reglement/statut-reglement.component';
+import { ManifesteComponent } from './static/manifeste/manifeste.component';
+import { NoIdComponent } from './static/no-id/no-id.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'about',
+    redirectTo: 'noid/maison',
     pathMatch: 'full'
   },
+  {
+    path: 'noid',
+    component:NoIdComponent ,
+    children: [
+    {
+      path: '',
+      redirectTo: 'maison',
+      pathMatch: 'full'
+    },
+    {
+      path: 'maison',
+      component: AboutComponent,
+      data: { title: 'Maison' }
+    },
 
-  {
-    path: 'about',
-    component: AboutComponent,
-    data: { title: 'Maison' }
+    {
+      path: 'test',
+      component: FeaturesComponent,
+      data: { title: 'anms.menu.settings' }
+    },
+    {
+      path: 'manifeste',
+      component: ManifesteComponent,
+      data: { title: '' }
+    },
+    {
+      path: 'statut-reglement',
+      component: StatutReglementComponent,
+      data: { title: 'statut-reglement' }
+    },
+    {
+      path: 'settings',
+      component: SettingsContainerComponent,
+      data: { title: 'anms.menu.settings' }
+    },
+    {
+      path: 'emailLogin',
+      component: SignInComponent,
+      data: { title: 'signIn' }
+    },
+    {
+      path: 'emailSignUp',
+      component: SignUpComponent,
+      data: { title: 'signUp' }
+    },
+    {
+      path: 'forget',
+      component: ForgotPasswordComponent,
+      data: { title: 'Oublie du mot de pass' }
+    },
+    {
+      path: 'verify-email-address',
+      component: VerifyEmailComponent,
+      data: { title: 'Vérification du courriel' }
+    },
+  ]
   },
 
-  {
-    path: 'test',
-    component: FeaturesComponent,
-    data: { title: 'anms.menu.settings' }
-  },
-  {
-    path: 'settings',
-    component: SettingsContainerComponent,
-    data: { title: 'anms.menu.settings' }
-  },
   {
     path: 'app',
     loadChildren: 'app/examples/examples.module#ExamplesModule',
     canActivate: [AuthGuardService],
   },
   {
-    path: 'emailLogin',
-    component: SignInComponent,
-    data: { title: 'signIn' }
-  },
-  {
-    path: 'emailSignUp',
-    component: SignUpComponent,
-    data: { title: 'signUp' }
-  },
-  {
-    path: 'forget',
-    component: ForgotPasswordComponent,
-    data: { title: 'Oublie du mot de pass' }
-  },
-  {
-    path: 'verify-email-address',
-    component: VerifyEmailComponent,
-    data: { title: 'Vérification du courriel' }
-  },
-  {
     path: '**',
-    redirectTo: 'about'
+    redirectTo: 'noid/maison'
   }
-
-];
+]
 
 @NgModule({
   // useHash supports github.io demo page, remove in your app

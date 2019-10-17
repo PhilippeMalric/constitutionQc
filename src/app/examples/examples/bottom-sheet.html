@@ -1,0 +1,19 @@
+<mat-nav-list>
+    <form #logoForm="ngForm" [formGroup]="logoFormGroup" >
+    <div class="row">
+      <mat-form-field class="col">
+        <mat-card>
+          <input matInput placeholder="{{ 'anms.examples.crud.placeholder1' | translate }}"
+          formControlName="texte" required autofocus>
+          <mat-error *ngIf="logoFormGroup.get('texte').invalid" >
+            Un titre est necessaire
+          </mat-error>
+
+        </mat-card>
+
+      </mat-form-field>
+    </div>
+
+  </form>
+  <button class="center" (click)="save()">Save</button>
+</mat-nav-list>

@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { DataService } from './examples/gears/data.service';
 import { CopyCBDirective } from './examples/pixabay/copy-cb.directive';
 
-
+import { NoIdComponent } from './static/no-id/no-id.component';
 
 
 @NgModule({
@@ -33,7 +33,7 @@ import { CopyCBDirective } from './examples/pixabay/copy-cb.directive';
     // app
     AppRoutingModule
   ],
-  declarations: [AppComponent,CopyCBDirective],
+  declarations: [AppComponent,CopyCBDirective,NoIdComponent],
   providers: [DataService],
   bootstrap: [AppComponent]
 })

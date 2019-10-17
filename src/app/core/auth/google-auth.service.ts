@@ -88,7 +88,7 @@ export class GoogleAuthService {
   SendVerificationMail() {
     return this.afAuth.auth.currentUser.sendEmailVerification()
     .then(() => {
-      this.router.navigate(['verify-email-address']);
+      this.router.navigate(['noid/verify-email-address']);
     })
   }
 

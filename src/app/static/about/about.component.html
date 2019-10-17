@@ -1,13 +1,17 @@
 
-<button class="centerB" mat-raised-button (click)="click()">Click!</button>
+<!--<button class="centerB" mat-raised-button (click)="click()">Click!</button>-->
 <div class="container">
     <div class="row">
       <div class="col-md-12" >
-        <h2  *ngIf="!(authName$ | async)" [ngClass]="routeAnimationsElements" class="main-heading">Qu'est-ce qui ce passe, maintenant?</h2>
-        <h2 *ngIf="authName$ | async"  [ngClass]="routeAnimationsElements">Bienvenue, {{authName$ | async}}</h2>
+        <h2  *ngIf="!(authName$ | async)" [ngClass]="routeAnimationsElements" class="main-heading">Bienvenue sur le site non officiel de l'ACCQ!!</h2>
+        <h2 *ngIf="authName$ | async"  [ngClass]="routeAnimationsElements">Bienvenue, {{authName$ | async}}, sur le site non officiel de l'ACCQ!</h2>
+        <button class="centerB" mat-raised-button color="warn" (click)="goToLink()">Lien vers le site web officiel</button>
       </div>
     </div>
     <img class="intro routeAnimationsElements" src="assets/Lys.png"/>
-<h5 id="identification" [ngClass]="routeAnimationsElements" >Pour vous identifier, vous avez deux choix. Si vous avez un compte gmail, cliquez sur le G de Google, en haut à droite. Sinon cliquez sur le petit bonhome à côté pour vous enregistrer, un courriel vous sera envoyé pour être certain que c'est vous, répondez-lui. Ensuite, vous pourrez vous identifier (sur la page d'authentification).</h5>
+    <h4>Application web</h4>
+    <h5 id="app" class="routeAnimationsElements" >Pour entrer dans l'application vous devez vous identifier. Cette application permet de connaître l'opinion des membres de l'ACCQ. À l'intérieur vous verrez une liste de carte représentant les enjeux à évaluer. Les notes sont de 1 à 5, 1 voulant dire que vous être totalement contre, 5 que vous êtes totalement en accord, 3 que vous êtes ambivalent, etc.. Tout le monde peut voir la moyenne des notes, mais les commentaires sont anonymes, vous pouvez vous servir de l'espace réservé aux commentaires pour annoter les cartes (en n'oubliant pas de sauvegarder), tout est conservé sur une base de données pour usage ultérieur. Vous pouvez à tous moment changer d'idée, il suffit pour cela de ré-envoyer votre vote pour annuler le précédent. Ce site n'est pas responsable des propos qu'il permet de rendre accessible. Vous êtes responsable de vos propos. Merci de votre collaboration, pour toute question n'hésitez pas à me contacter : malric.philippe@gmail.com</h5>
+    <h4>Identification</h4>
+    <h5 id="identification" class="routeAnimationsElements" >Pour vous identifier, vous avez deux choix. Si vous avez un compte gmail, cliquez sur le G de Google, en haut à droite. Sinon cliquez sur le petit bonhome à côté pour vous enregistrer, un courriel vous sera envoyé pour être certain que c'est vous, répondez-lui. Ensuite, vous pourrez vous identifier (sur la page d'authentification).</h5>
 
 </div>

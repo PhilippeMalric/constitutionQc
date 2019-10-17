@@ -9,6 +9,8 @@ import { voteReducer } from './crud/vote.reducer';
 import { VoteState } from './crud/vote.model';
 import { UserState } from './users-info/users.model';
 import { userReducer } from './users-info/users.reducer';
+import { QuestionnaireState } from './questionnaire/questionnaire.model';
+import { questionnaireReducer } from './questionnaire/questionnaire.reducer';
 
 export const FEATURE_NAME = 'examples';
 
@@ -20,7 +22,8 @@ export const reducers: ActionReducerMap<ExamplesState> = {
   jeux: jeuReducer,
   logos: logoReducer,
   votes: voteReducer,
-  users: userReducer
+  users: userReducer,
+  questionnaire: questionnaireReducer
 };
 
 export interface ExamplesState {
@@ -28,6 +31,7 @@ export interface ExamplesState {
   logos: LogoState;
   votes: VoteState;
   users: UserState;
+  questionnaire: QuestionnaireState;
 }
 
 export interface State extends AppState {

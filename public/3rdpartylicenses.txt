@@ -1,4 +1,4 @@
-@angular/material
+@angular/cdk
 MIT
 The MIT License
 
@@ -342,7 +342,7 @@ MIT
 
 @angular/material/button
 
-@angular/cdk
+@angular/material
 MIT
 The MIT License
 
@@ -366,6 +366,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+
+@angular/forms
+MIT
+
+@angular/material/tooltip
+
+@angular/material/core
+
+@angular/material/form-field
+
+@angular/material/select
+
+@angular/material/tabs
+
+@angular/material/card
+
+@angular/material/icon
 
 @fortawesome/angular-fontawesome
 MIT
@@ -407,19 +424,6 @@ trademarks does not indicate endorsement of the trademark holder by Font
 Awesome, nor vice versa. **Please do not use brand logos for any purpose except
 to represent the company, product, or service to which they refer.**
 
-
-@angular/material/card
-
-@angular/material/core
-
-@angular/forms
-MIT
-
-@angular/material/icon
-
-@angular/material/form-field
-
-@angular/material/select
 
 firebase
 Apache-2.0
@@ -673,10 +677,10 @@ MIT
 
 @angular/fire/firestore
 
+@angular/material/list
+
 angularfire2/firestore
 MIT
-
-@angular/material/tooltip
 
 @angular/material/snack-bar
 
@@ -712,11 +716,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+@angular/material/table
+
 @angular/material/slide-toggle
 
-@angular/fire/auth
+@angular/material/paginator
 
-@angular/material/list
+@angular/material/stepper
+
+@angular/fire/auth
 
 @angular/material/menu
 
@@ -805,11 +813,8 @@ Awesome, nor vice versa. **Please do not use brand logos for any purpose except
 to represent the company, product, or service to which they refer.**
 
 
-@ngrx/store
-MIT
-
-@ngx-translate/core
-MIT
+@firebase/installations
+Apache-2.0
 
 @firebase/messaging
 Apache-2.0
@@ -817,8 +822,11 @@ Apache-2.0
 @firebase/storage
 Apache-2.0
 
-@firebase/installations
-Apache-2.0
+@ngx-translate/core
+MIT
+
+@ngrx/store
+MIT
 
 firebase/firestore
 
@@ -928,7 +936,7 @@ SOFTWARE.
 angularfire2/database
 MIT
 
-@angular/material/tabs
+@angular/material/bottom-sheet
 
 @angular/material/slider
 

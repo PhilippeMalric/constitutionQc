@@ -1,36 +1,30 @@
 import { createSelector } from '@ngrx/store';
-import { jeuAdapter } from './jeu.reducer';
 
 import { ExamplesState, selectExamples } from '../examples.state';
+import { voteAdapter } from './vote.reducer';
 
-const { selectEntities, selectAll } = jeuAdapter.getSelectors();
+const { selectEntities, selectAll } = voteAdapter.getSelectors();
 
-export const selectJeux = createSelector(
+export const selectVotes = createSelector(
   selectExamples,
   (state: ExamplesState) => state.votes
 );
 
-export const selectAllVote = createSelector(selectJeux, selectAll);
+export const selectAllVotes = createSelector(selectVotes, selectAll);
 
-export const selectJeuxState = createSelector(
+export const selectVoteState = createSelector(
   selectExamples,
-  (state: ExamplesState) => state.jeux
+  (state: ExamplesState) => state.votes
 );
 
-export const selectJeuTour = createSelector(
-  selectJeuxState,
+export const selectVoteTour = createSelector(
+  selectVoteState,
   state => state.entities
 );
 
-export const selectJeuxEtat = createSelector(
-  selectJeuxState,
+export const selectVotesEtat = createSelector(
+  selectVoteState,
   state => state.entities
 );
 
-export const selectTourEtat = createSelector(
-  selectJeuTour,
-  selectJeuxEtat,
-  (tour, etat) => {
-    return etat;
-  }
-);
+

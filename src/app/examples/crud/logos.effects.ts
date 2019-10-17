@@ -17,8 +17,8 @@ import {
 import { Router } from '@angular/router';
 import { ActionVoteUpdate, ActionVoteCalculate } from './vote.actions';
 
-export const Logos_KEY = 'QLkk1A5nUtAop6mQuM3N';
-export const DICT_uID_FB = 'kb3GegGUOCp4qfOX0Khg';
+export const Logos_KEY = 'FiXDfsyrc6fOM8iHnZvd';
+export const DICT_uID_FB = 'ZcldoWlmKfZV5lhaZFBe';
 
 @Injectable()
 export class LogosEffects {
@@ -34,6 +34,7 @@ export class LogosEffects {
   persistLogos = this.actions$.pipe(
     ofType(
       LogoActionTypes.SAVE,
+
 
     ),
     withLatestFrom(this.store),
@@ -54,11 +55,13 @@ export class LogosEffects {
 
           //console.log('id1');
           //console.log(store.auth.uid);
-          if (store.auth.uid && store.auth.uid in values) {
+          if (store && store.auth.uid && store.auth.uid in values) {
             let id = values[store.auth.uid];
-            const collection: AngularFirestoreCollection<LogoState> = this.afs.collection('logos');
+            const collection: AngularFirestoreCollection<LogoState> = this.afs.collection('items');
 
             let newStore = JSON.parse(JSON.stringify(store))
+
+            newStore.examples =  {logos:newStore.examples.logos}
 
             newStore.examples.logos.entities[actions['payload']['logo']['id']] = actions['payload']['logo']
             collection.doc(Logos_KEY).update(newStore);
@@ -70,6 +73,8 @@ export class LogosEffects {
             //console.log('collection');
 
             let newStore = JSON.parse(JSON.stringify(store))
+
+            newStore.examples =  {logos:newStore.examples.logos}
 
             newStore.examples.logos.entities[actions['payload']['logo']['id']] = actions['payload']['logo']
 
@@ -99,6 +104,7 @@ export class LogosEffects {
           console.log('store to firestore');
           console.log(store);
           let newStore = JSON.parse(JSON.stringify(store))
+          newStore.examples =  {logos:newStore.examples.logos}
           const collection: AngularFirestoreCollection<LogoState> = this.afs.collection('items');
           collection.doc(Logos_KEY).update(newStore);
           //console.log('User not in index : ' + DICT_uID_FB);
