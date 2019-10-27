@@ -45,6 +45,7 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
 
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { QuestionnaireEffects } from './questionnaire/questionnaire.effects';
+import { FbEffects } from './fb-component/fb.effects';
 
 @NgModule({
   imports: [
@@ -67,7 +68,8 @@ import { QuestionnaireEffects } from './questionnaire/questionnaire.effects';
       LogosEffects,
       VotesEffects,
       UsersEffects,
-      QuestionnaireEffects
+      QuestionnaireEffects,
+      FbEffects
     ])
   ],
   declarations: [

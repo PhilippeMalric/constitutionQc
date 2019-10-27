@@ -11,6 +11,8 @@ import { UserState } from './users-info/users.model';
 import { userReducer } from './users-info/users.reducer';
 import { QuestionnaireState } from './questionnaire/questionnaire.model';
 import { questionnaireReducer } from './questionnaire/questionnaire.reducer';
+import { FbState } from './fb-component/fb.model';
+import { FbReducer } from './fb-component/fb.reducer';
 
 export const FEATURE_NAME = 'examples';
 
@@ -23,7 +25,8 @@ export const reducers: ActionReducerMap<ExamplesState> = {
   logos: logoReducer,
   votes: voteReducer,
   users: userReducer,
-  questionnaire: questionnaireReducer
+  questionnaire: questionnaireReducer,
+  fb:FbReducer
 };
 
 export interface ExamplesState {
@@ -32,6 +35,7 @@ export interface ExamplesState {
   votes: VoteState;
   users: UserState;
   questionnaire: QuestionnaireState;
+  fb:FbState;
 }
 
 export interface State extends AppState {

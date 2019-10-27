@@ -80,7 +80,7 @@ const routes: Routes = [
 
   {
     path: 'app',
-    loadChildren: 'app/examples/examples.module#ExamplesModule',
+    loadChildren: () => import('app/examples/examples.module').then(m => m.ExamplesModule),
     canActivate: [AuthGuardService],
   },
   {
