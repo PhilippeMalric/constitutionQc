@@ -29,7 +29,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Action } from 'rxjs/internal/scheduler/Action';
 import { SaveUsers } from '../users-info/users.actions';
 import { User } from '../users-info/users.model';
-import { MatBottomSheetRef, MatBottomSheet } from '@angular/material';
+import { MatBottomSheetRef, MatBottomSheet } from '@angular/material/bottom-sheet';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
