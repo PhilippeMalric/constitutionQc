@@ -31,7 +31,10 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule, FirestoreSettingsToken } from 'angularfire2/firestore';
+import {
+  AngularFirestoreModule,
+  FirestoreSettingsToken
+} from 'angularfire2/firestore';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -47,7 +50,13 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     HttpClientModule,
     StoreRouterConnectingModule.forRoot(),
     // ngrx
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
 
     EffectsModule.forRoot([AuthEffects, GoogleAnalyticsEffects]),
     environment.production
@@ -69,7 +78,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ForgotPasswordComponent,
     SignUpComponent,
     VerifyEmailComponent,
-    SignInComponent,
+    SignInComponent
   ],
   providers: [
     { provide: FirestoreSettingsToken, useValue: {} },
