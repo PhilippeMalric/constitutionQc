@@ -24,7 +24,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSliderModule } from '@angular/material/';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
@@ -34,7 +33,7 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
   imports: [
     CommonModule,
     FormsModule,
-    AngularFontAwesomeModule,
+
     TranslateModule,
 
     MatButtonModule,
@@ -87,7 +86,6 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
     MatSliderModule,
     MatDatepickerModule,
     MatNativeDateModule,
-
 
     BigInputComponent,
     BigInputActionComponent,
