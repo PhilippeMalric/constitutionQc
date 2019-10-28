@@ -25,8 +25,7 @@ export const reducers: ActionReducerMap<ExamplesState> = {
   logos: logoReducer,
   votes: voteReducer,
   users: userReducer,
-  questionnaire: questionnaireReducer,
-  fb:FbReducer
+  questionnaire: questionnaireReducer
 };
 
 export interface ExamplesState {
@@ -35,7 +34,6 @@ export interface ExamplesState {
   votes: VoteState;
   users: UserState;
   questionnaire: QuestionnaireState;
-  fb:FbState;
 }
 
 export interface State extends AppState {

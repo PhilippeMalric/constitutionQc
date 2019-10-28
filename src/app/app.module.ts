@@ -11,14 +11,17 @@ import { StaticModule } from './static';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataService } from './examples/gears/data.service';
-import { CopyCBDirective } from './examples/pixabay/copy-cb.directive';
 
 import { NoIdComponent } from './static/no-id/no-id.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core'; 
+import { fas } from '@fortawesome/free-solid-svg-icons'; 
+library.add(fas);
 
 @NgModule({
   imports: [
-
+    FontAwesomeModule,
     // angular
     BrowserAnimationsModule,
     BrowserModule,
@@ -33,7 +36,7 @@ import { NoIdComponent } from './static/no-id/no-id.component';
     // app
     AppRoutingModule
   ],
-  declarations: [AppComponent,CopyCBDirective,NoIdComponent],
+  declarations: [AppComponent,NoIdComponent],
   providers: [DataService],
   bootstrap: [AppComponent]
 })

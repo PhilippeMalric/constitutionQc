@@ -8,7 +8,6 @@ import { SignInComponent } from './core/auth/sign-in/sign-in.component';
 import { VerifyEmailComponent } from './core/auth/verify-email/verify-email.component';
 import { AuthGuardService } from './core';
 import { AboutComponent } from './static';
-import { Variable } from '@angular/compiler/src/render3/r3_ast';
 import { FeaturesComponent } from './static/features/features.component';
 import { StatutReglementComponent } from './static/statut-reglement/statut-reglement.component';
 import { ManifesteComponent } from './static/manifeste/manifeste.component';

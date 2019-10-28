@@ -9,10 +9,6 @@ import { CrudComponent } from './crud/components/crud.component';
 
 import { GearsComponent } from './gears/gears.component';
 import { UsersInfoComponent } from './users-info/users-info.component';
-import { PixabayComponent } from './pixabay/pixabay.component';
-
-import {FbComponent} from "./fb-component/fb.component"
-import { VariableComponent } from './variable-component/variable.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 const routes: Routes = [
   {
@@ -30,11 +26,6 @@ const routes: Routes = [
         data: { title: 'Liste de lecture' }
       },
       {
-        path: 'pixbay',
-        component: PixabayComponent,
-        data: { title: 'PixBay' }
-      },
-      {
         path: 'crud/:id',
         component: CrudComponent,
         data: { title: 'Liste de lecture' }
@@ -48,16 +39,6 @@ const routes: Routes = [
         path: 'users-info',
         component: UsersInfoComponent,
         data: { title: 'Users' }
-      },
-      {
-        path: 'fb-comments',
-        component: FbComponent,
-        data: { title: 'fb' }
-      },
-      {
-        path: 'variables',
-        component: VariableComponent,
-        data: { title: 'Variables' }
       },
       {
         path: 'questionnaire',

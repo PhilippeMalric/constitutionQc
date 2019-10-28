@@ -24,15 +24,11 @@ import { GearsComponent } from './gears/gears.component';
 import { SHARED_VISUALS } from './visuals/shared';
 import { D3_DIRECTIVES, D3Service } from './d3';
 import { GraphComponent } from './visuals/graph/graph.component';
-import { DataService } from './gears/data.service';
 import { VotesEffects } from './crud/vote.effects';
 import { UsersInfoComponent } from './users-info/users-info.component';
-import * as fromUsers from './users-info/users.reducer';
 import { UsersEffects } from './users-info/users.effects';
 import { PixabayComponent } from './pixabay/pixabay.component';
 
-import {FbComponent} from "./fb-component/fb.component"
-import {VariableComponent} from "./variable-component/variable.component"
 import { VariableService } from './variable-component/variable.service';
 import { FbService } from './fb-component/fb.service';
 
@@ -45,7 +41,6 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
 
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { QuestionnaireEffects } from './questionnaire/questionnaire.effects';
-import { FbEffects } from './fb-component/fb.effects';
 
 @NgModule({
   imports: [
@@ -68,15 +63,12 @@ import { FbEffects } from './fb-component/fb.effects';
       LogosEffects,
       VotesEffects,
       UsersEffects,
-      QuestionnaireEffects,
-      FbEffects
+      QuestionnaireEffects
     ])
   ],
   declarations: [
     BottomSheetComponent,
     DynamicFormQuestionComponent,
-    VariableComponent,
-    FbComponent,
     GraphComponent,
     ...SHARED_VISUALS,
     ...D3_DIRECTIVES,
@@ -85,13 +77,12 @@ import { FbEffects } from './fb-component/fb.effects';
     AuthenticatedComponent,
     GearsComponent,
     UsersInfoComponent,
-    PixabayComponent,
     DynamicFormComponent,
     QuestionnaireComponent
   ],
   entryComponents: [BottomSheetComponent],
-  providers: [JeuServiceService,VariableService,FbService,QuestionControlService,QuestionService],
-  exports: [PixabayComponent, DynamicFormComponent, QuestionnaireComponent]
+  providers: [JeuServiceService,QuestionControlService,QuestionService],
+  exports: [ DynamicFormComponent, QuestionnaireComponent]
 })
 export class ExamplesModule {
   constructor() {}
